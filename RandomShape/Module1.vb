@@ -59,7 +59,7 @@
             'printout()
 
             Dim x() As Byte
-            x = My.Computer.FileSystem.ReadAllBytes("C:\Users\Dulara Rupasinghe\Desktop\out\tmp.bmp")
+            x = My.Computer.FileSystem.ReadAllBytes("tmp.bmp")
             Dim i As Integer = 0
             Dim a As Integer = 0
             i = x.Length - (max * max)
@@ -68,11 +68,11 @@
                 i += 1
                 a += 1
             Loop
-            If My.Computer.FileSystem.FileExists("C:\Users\Dulara Rupasinghe\Desktop\out\" & imgcnt & ".bmp") Then
-                My.Computer.FileSystem.DeleteFile("C:\Users\Dulara Rupasinghe\Desktop\out\" & imgcnt & ".bmp")
+            If My.Computer.FileSystem.FileExists("out\" & imgcnt & ".bmp") Then
+                My.Computer.FileSystem.DeleteFile("out\" & imgcnt & ".bmp")
             End If
 
-            My.Computer.FileSystem.WriteAllBytes("C:\Users\Dulara Rupasinghe\Desktop\out\" & imgcnt & ".bmp", x, True)
+            My.Computer.FileSystem.WriteAllBytes("out\" & imgcnt & ".bmp", x, True)
             imgcnt += 1
 
             i = 0
